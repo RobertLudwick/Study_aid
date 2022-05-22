@@ -10,6 +10,11 @@ First you must run init.py then main.py for each subsequent run.
 ## Dependencies
 sqlite3
 
+## TODo
+Add a way to make new cards
+Display cards and other elements better (maybe with curses)
+Add a way to take quizzes
+
 ## Future ideas
 
 Implement UI with curses
