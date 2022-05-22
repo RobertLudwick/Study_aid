@@ -1,9 +1,9 @@
 #Write your own Queries in Query.txt and execute them by running this file
 # For testing purposes only
-
+import DB_Handler
 import sqlite3 as sl
 
-con = sl.connect('Quiz.db')
+con = sl.connect('Study.db')
 
 q = open("Query.txt", "r")
 sql = q.read()
@@ -18,7 +18,6 @@ def CallDB(command):
             print(i)
         #     # this print is specific to querying the Notes table
         #     print (f"{i[0]} {i[1]} {i[2]} {i[3]}")
-
 
 for i in sql:
     print(i)
