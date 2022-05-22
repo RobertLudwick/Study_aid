@@ -12,7 +12,9 @@ sqlite3
 
 ## TODo
 Add a way to make new cards
+
 Display cards and other elements better (maybe with curses)
+
 Add a way to take quizzes
 
 ## Future ideas
