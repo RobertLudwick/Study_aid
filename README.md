@@ -11,11 +11,11 @@ First you must run init.py then main.py for each subsequent run.
 sqlite3
 
 ## TODo
-Add a way to make new cards
-
 Display cards and other elements better (maybe with curses)
 
 Add a way to take quizzes
+
+Write a bash script that handles what python file to run
 
 ## Future ideas
 

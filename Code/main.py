@@ -1,4 +1,5 @@
 from ast import Num
+from tkinter import INSERT
 import DB_Handler
 #How to use
 #DB_Handler.CallDB(List)
@@ -6,7 +7,7 @@ import DB_Handler
 
 # Starting Values
 # These are the values the system requires to run pulled from DB
-Users = []
+user = []
 
 # Generated values
 
@@ -30,7 +31,7 @@ def login(name):
         password = input("Enter your password: ")
         DB_Handler.InsertIntoDB("users", (name, password))
         #this default card keeps the queries that run from passing nothing later on
-        DB_Handler.InsertIntoDB("cards", (1, user, "user", "users", user))
+        DB_Handler.InsertIntoDB("cards", (1, name, "user", "users", name))
         startup()
     password = input("Enter your password: ")
     if password == user[1]:
@@ -51,7 +52,6 @@ def DisplayQuizzes():
     num = input("type the number of the quiz you would like to select ")
     return (Quizes[int(num)])
 
-
 def RetrieveQuiz(quiz):
     for i in Cards:
         if i[3] == quiz:
@@ -59,16 +59,26 @@ def RetrieveQuiz(quiz):
             print(i[2])
             print("")
 
+def CreateCard(Card,quiz):
+    Description = input("Enter your description ")
+    DB_Handler.InsertIntoDB("cards", (len(Cards)+1, Card, Description, quiz, user[0]))
+
+def CreateQuiz(quiz):
+    Card = input("Name the Card ")
+    CreateCard(Card,quiz)
+
 def startup():
     name = input("Eneter your username: ")
     #login is disabled for testing purposes
-    #login(name)
+    user = login(name)
     DBCards = DB_Handler.SearchDB("cards", "user", name)
     for i in DBCards:
         Cards.append(i)
-    RetrieveQuiz(DisplayQuizzes())
-
-
+    return(user)
+    
 
 #main
-startup()
+user = startup()
+#code to test functions any commented out function is tested
+#CreateQuiz("Test")
+#RetrieveQuiz(DisplayQuizzes())
