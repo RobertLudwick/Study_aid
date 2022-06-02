@@ -67,6 +67,20 @@ def CreateQuiz(quiz):
     Card = input("Name the Card ")
     CreateCard(Card,quiz)
 
+def TakeQuiz(quiz):
+    max_score = 0
+    score = 0
+    for i in Cards:
+        if i[3] == quiz:
+            print(i[2])
+            answer = input("Answer the question ")
+            print(i[1])
+            if answer == i[1]:
+                score = score + 1
+            max_score = max_score + 1
+    return (score/max_score)
+
+
 def startup():
     name = input("Eneter your username: ")
     #login is disabled for testing purposes
@@ -82,3 +96,4 @@ user = startup()
 #code to test functions any commented out function is tested
 #CreateQuiz("Test")
 #RetrieveQuiz(DisplayQuizzes())
+print (TakeQuiz("Test"))

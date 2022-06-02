@@ -13,9 +13,7 @@ sqlite3
 ## TODo
 Display cards and other elements better (maybe with curses)
 
-Add a way to take quizzes
-
-Write a bash script that handles what python file to run
+Add a way to store quiz results
 
 ## Future ideas
 
